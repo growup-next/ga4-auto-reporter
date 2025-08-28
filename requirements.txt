@@ -1,0 +1,6 @@
+streamlit
+pandas
+google-analytics-data
+google-generativeai
+python-dateutil
+plotly
