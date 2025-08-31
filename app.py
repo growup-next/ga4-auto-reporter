@@ -84,7 +84,8 @@ try:
         selected_site_name = st.selectbox("分析したいサイトを選択してください", site_options)
         
         if selected_site_name:
-            selected_property_id = str(sites[sites['SiteName'] == selected_site_name]['PropertyID'].iloc[0])
+            property_id_from_sheet = sites[sites['SiteName'] == selected_site_name]['PropertyID'].iloc[0]
+            selected_property_id = str(int(property_id_from_sheet))
 
             business_goal = st.text_input("このサイトの最も重要なビジネス目標は何ですか？", "サイト経由の売上を増やす")
             
