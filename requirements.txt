@@ -6,3 +6,5 @@ python-dateutil
 plotly
 gspread
 google-auth
+oauth2client
+gspread-dataframe
