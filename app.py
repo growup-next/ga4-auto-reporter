@@ -87,7 +87,17 @@ try:
             property_id_from_sheet = sites[sites['SiteName'] == selected_site_name]['PropertyID'].iloc[0]
             selected_property_id = str(int(property_id_from_sheet))
 
-            business_goal = st.text_input("このサイトの最も重要なビジネス目標は何ですか？", "サイト経由の売上を増やす")
+            goal_options = [
+                "サイト経由の売上を増やす",
+                "問い合わせや見込み客の件数を増やす",
+                "ブランドの認知度を向上させる",
+                "リピーターを増やし、顧客との関係を深める"
+            ]
+
+            business_goal = st.selectbox(
+                "このサイトの最も重要なビジネス目標を選択してください",
+                goal_options
+            )
             
             if st.button("📈 最新ダッシュボードを生成する"):
                 ga_client = get_ga_client()
